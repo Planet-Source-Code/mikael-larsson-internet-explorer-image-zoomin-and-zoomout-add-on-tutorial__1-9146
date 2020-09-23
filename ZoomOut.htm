@@ -1,0 +1,31 @@
+<HTML>
+<SCRIPT LANGUAGE="VbScript" > 
+' This Script was translated from javascript to vbscript by Mikael Larsson
+' Email : Milar82@telia.com
+' Copyrights Mikael Larsson 2000
+
+Dim w ' Variable to hold the new Width
+Dim h ' Variable to hold the new Height
+
+ ' Checks if you Right-clicked on an image
+if  external.menuArguments.event.srcElement.tagName = "IMG" then 
+	
+	' Takes the old height / 2 and put's it into Variabel (h)
+	h = external.menuArguments.event.srcElement.height / 2 
+	
+	'Set's Image Height to the value in (h)
+	external.menuArguments.event.srcElement.height = h
+
+	' Takes the old Width / 2 and put's it into Variabel (w)
+	w = external.menuArguments.event.srcElement.width / 2
+	
+	'Set's Image width to the value in (w)
+	external.menuArguments.event.srcElement.width = w
+Else
+	' If you didn't right click on an image display this msg
+	MsgBox "You must right-click on an image to Zoom."
+End if
+
+</SCRIPT>
+</HTML>
+

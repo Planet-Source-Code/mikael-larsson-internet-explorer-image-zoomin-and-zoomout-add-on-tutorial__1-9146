@@ -1,0 +1,124 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Mikael Larsson">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (Win98; I) [Netscape]">
+   <title>Readme</title>
+</head>
+<body>
+You may have seen The&nbsp; Internet Explorer 4.0 Power Toys ZoomIn
+And ZoomOut
+<br>Add-on's. In this document you will learn how they where
+<br>made and how they where added as menu Items.
+<p>There will be allot of spellings errors in this Document (Sorry Im a
+swede)hehe.
+<br>&nbsp;
+<p>There is 3 files coming with this Zip
+<br>Note that all code Files are well commented
+<p><font color="#00CC00">Turital.html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+' is this file</font>
+<br><font color="#00CC00">ZoomIn.htm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+' is the code for ZoomIn function</font>
+<br><font color="#00CC00">ZoomOut.htm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+' is the code for ZoomOut function</font>
+<p>First i taught that these functions where imbedded in a dll file or
+something until i took a closer
+<br>look at the Internet Explorer 4.0 Power Toys install log file.
+<p>this is what i found.
+<br>from install.log
+<br><font color="#00CC00">File Copy: C:\WINDOWS\Web\zoomout.htm</font>
+<br><font color="#00CC00">File Copy: C:\WINDOWS\Web\zoomin.htm</font>
+<p>these functions where simple html pages with Java Scripts in them.
+<br>(I have translated these JavaScript's To VbScript.)
+<p>So how where they added on to the menu.
+<br>in the registry for internet explorer there is key called MenuExt.
+<br>it let's you add Menu items linked to files on your Computer.
+<p>from install.log
+<br><font color="#00CC00">RegDB Key: Software\Microsoft\Internet Explorer\MenuExt\Zoom
+&amp;In</font>
+<br><font color="#00CC00">RegDB Val: C:\WINDOWS\WEB\zoomin.htm</font>
+<br><font color="#00CC00">RegDB Root: 1</font>
+<br><font color="#00CC00">RegDB Key: Software\Microsoft\Internet Explorer\MenuExt\Zoom
+&amp;In</font>
+<br><font color="#00CC00">RegDB Val: 02</font>
+<br><font color="#00CC00">RegDB Name: contexts</font>
+<br><font color="#00CC00">RegDB Root: 1</font>
+<br><font color="#00CC00">RegDB Key: Software\Microsoft\Internet Explorer\MenuExt\Zoom
+&amp;Out</font>
+<br><font color="#00CC00">RegDB Val: C:\WINDOWS\WEB\zoomout.htm</font>
+<br><font color="#00CC00">RegDB Root: 1</font>
+<br><font color="#00CC00">RegDB Key: Software\Microsoft\Internet Explorer\MenuExt\Zoom
+&amp;Out</font>
+<br><font color="#00CC00">RegDB Val: 02</font>
+<br><font color="#00CC00">RegDB Name: contexts</font>
+<br><font color="#00CC00">RegDB Root: 1</font>
+<p>In the key <font color="#00CC00">MenuExt\ </font><font color="#000000">there
+is a key called </font><font color="#00CC00">Zoom &amp;In\ </font><font color="#000000">this
+key is the name that will show</font>
+<br><font color="#000000">up on the menu list.</font>
+<br><font color="#000000">at </font><font color="#00CC00">MenuExt\Zoom
+&amp;In </font><font color="#000000">key there is to value items one binary
+and one string value.</font>
+<p><font color="#00CC00">contexts </font><font color="#000000">Tells with
+right-click menu to show item on Example : 01 = Everywhere 02 = on images</font>
+<br><font color="#00CC00">(Default)</font><font color="#000000">&nbsp;
+Tells with file to activate if item is clicked Example c:\windows\web\ZoomIn.htm</font>
+<p><font color="#000000">Now it's time to try ZoomIn.htm And ZoomOut.htm</font>
+<br><font color="#000000">To start with, you need to add some values to
+the windows registry</font>
+<br><font color="#000000">(if you have no </font><font color="#FF0000">clue</font><font color="#000000">
+about what windows registry is Please follow the instructions)</font>
+<p><font color="#000000">1.&nbsp; Start Regedit. (the windows registry
+editor)</font>
+<br><font color="#000000">2.&nbsp; Open HKEY_CURRENT_USER\Software\Microsoft\Internet
+Explorer\MenuExt\</font>
+<br><font color="#000000">3.&nbsp; Add A new key Called </font><font color="#00CC00">Zoom
+&amp;In</font><font color="#000000">.</font>
+<br><font color="#000000">4.&nbsp; Open </font><font color="#00CC00">Zoom
+&amp;In</font>
+<br><font color="#000000">5.&nbsp; Add new String value and name it </font><font color="#00CC00">contexts</font>
+<br><font color="#000000">6.&nbsp; Change the value of </font><font color="#00CC00">contexts</font><font color="#000000">
+to </font><font color="#00CC00">02</font>
+<br><font color="#000000">7.&nbsp; Now Change the value of&nbsp; </font><font color="#00CC00">(Default)</font><font color="#000000">
+to The Path</font>
+<br><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp; Where you unzipped the
+file And </font><font color="#00CC00">ZoomIn.htm&nbsp; </font><font color="#000000">Exampel
+: C:\downloads\Vbscript\ZoomIn.htm</font>
+<p><font color="#000000">8.&nbsp; </font><font color="#FF0000">Now it's
+time to add the second item on the menu list.</font>
+<br><font color="#000000">9.&nbsp; Open HKEY_CURRENT_USER\Software\Microsoft\Internet
+Explorer\MenuExt\</font>
+<br><font color="#000000">10. Add A new key Called </font><font color="#00CC00">Zoom
+&amp;Out</font><font color="#000000">.</font>
+<br><font color="#000000">11. Open </font><font color="#00CC00">Zoom &amp;Out</font>
+<br><font color="#000000">12. Add new String value and name it </font><font color="#00CC00">contexts</font>
+<br><font color="#000000">13. Change the value of </font><font color="#00CC00">contexts</font><font color="#000000">
+to </font><font color="#00CC00">02</font>
+<br><font color="#000000">14. Now Change the value of&nbsp; </font><font color="#00CC00">(Default)</font><font color="#000000">
+to The Path</font>
+<br><font color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Where you unzipped
+the file And </font><font color="#00CC00">ZoomOut.htm&nbsp; </font><font color="#000000">Example
+: C:\downloads\Vbscript\ZoomOut.htm</font>
+<p><font color="#000000">If Internet Explorer is running you must restart
+it (it Loads information from registry on startup)</font>
+<br><font color="#000000">now open any web page that has pictures on it.</font>
+<p><font color="#000000">right-click on a picture and click on </font><font color="#00CC00">Zoom
+In</font><font color="#000000">. The picture will get larger</font>
+<br><font color="#000000">right-click on a picture and click on </font><font color="#00CC00">Zoom
+Out</font><font color="#000000">. And the picture will get smaller</font>
+<p><font color="#000000">So how does this work . Open</font><font color="#00CC00">
+ZoomIn.htm </font><font color="#000000">and</font><font color="#00CC00">
+ZoomOut.htm</font><font color="#000000"> in Notepad or any other</font>
+<br><font color="#000000">Ascii editor.</font>
+<p><font color="#000000">in it you will see a Visual Basic Script.</font>
+<br><font color="#000000">All Code is commented And you should be able
+to understand it.</font>
+<p><font color="#000000">Thanks For Reading And don't forget to give me
+your vote if you feel i deserve it!</font>
+<p><a href="http://www.planet-source-code.com/vb/scripts/ShowCode.asp?lngWId=1&txtCodeId=9146">http://www.planet-source-code.com/vb/scripts/ShowCode.asp?lngWId=1&amp;txtCodeId=9146</a>
+<p><font color="#000000">//Mikael Larsson <a href="../../../mail:Milar82@telia.com">Milar82@telia.com</a></font>
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>
